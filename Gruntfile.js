@@ -2,12 +2,13 @@ module.exports = function(grunt) {
 
   grunt.initConfig({
     sass: {
-      dist: {
+      style_css: {
         files: {
           'assets/css/style.css' : 'assets/css/src/style.scss'
         }
       }
     },
+
     watch: {
       style_css: {
         files: 'assets/css/src/style.scss',
@@ -22,5 +23,5 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-contrib-uglify');
   grunt.loadNpmTasks('grunt-contrib-watch');
 
-  grunt.registerTask('default', ['jshint']);
+  grunt.registerTask('style_css', ['sass:style_css']);
 };
